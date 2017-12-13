@@ -1,0 +1,29 @@
+I"g(function() {
+  var base;
+
+  (base = Spree.Views).Tables || (base.Tables = {});
+
+  Spree.Views.Tables.EditableTable = (function() {
+    function EditableTable() {}
+
+    EditableTable.add = function($el) {
+      return new Spree.Views.Tables.EditableTableRow({
+        el: $el
+      });
+    };
+
+    EditableTable.append = function(html) {
+      var $row;
+      $row = $(html);
+      $('#images-table').removeClass('hidden').find('tbody').append($row);
+      $row.find('.select2').select2();
+      $('.no-objects-found').hide();
+      return this.add($row);
+    };
+
+    return EditableTable;
+
+  })();
+
+}).call(this);
+:ET

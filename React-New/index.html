@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React-ivists</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
+    <style type="text/css">
+      #my-thingy{
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="thingy"></div>
+    <script type="text/babel">
+      function MyThingy (props) {
+        return <h1 id="my-thingy" className="header">{ props.specialWords }</h1>
+      }
+
+      class NextThingy extends React.Component {
+        render () {
+          return <h4>{ this.props.specialWords }</h4>
+        }
+      }
+
+      class Student extends React.Component {
+        render () {
+          return (
+            <div>
+              <h3>
+              { this.props.name }
+              </h3>
+              <p>
+              { this.props.name } lives in { this.props.location }
+              </p>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render (
+        <div>
+          <MyThingy specialWords="THINGY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" />
+          <NextThingy specialWords="SUBTITLE THINGY!!!!!!!!!!!!!" />
+          <Student name="George" location="The Moon" />
+          <Student name="Bill" location="George's Basement" />
+        </div>,
+        document.getElementById("thingy")
+      )
+    </script>
+  </body>
+</html>

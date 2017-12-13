@@ -1,0 +1,16 @@
+html
+  head
+    title Hello!
+  body
+
+    h1 To do list:
+
+    ul
+      each task in todos
+        li= `${task.task}: ${task.complete}`
+
+    form(action='/todo', method='POST')
+      p Add a new task!
+      input(name='todo_task')
+      input(name='todo_complete')
+      input(type='submit')
