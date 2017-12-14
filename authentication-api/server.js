@@ -7,6 +7,7 @@ const cors = require('cors')
 const express = require('express')
 const bodyParser = require('body-parser')
 const { initialize, requireJWT, verifyAdmin } = require('./middleware/auth')
+const port = process.env.PORT || 7000
 
 const app = express()
 
@@ -36,7 +37,7 @@ app.use((req, res, next) => {
   })
 })
 
-app.listen(7000, (error) => {
+app.listen(port, (error) => {
   if (error) {
     console.log('There was a problem starting the server', error)
   } else {

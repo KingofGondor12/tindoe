@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 // Use the promise functionality built into Node
 mongoose.Promise = global.Promise
 
-mongoose.connect('mongodb://localhost/myshop', { useMongoClient: true })
+mongoose.connect('mongodb://admin:admin@ds139446.mlab.com:39446/authentication-db', { useMongoClient: true })
   .then(() => {
     console.log('Successfully connected to database!')
   })
